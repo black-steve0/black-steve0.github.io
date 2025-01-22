@@ -1,0 +1,148 @@
+<style>
+  :root {
+    --background-color: #0a192f; /* Dark blue background */
+    --text-color: #ccd6f6; /* Light gray text */
+    --accent-color: #64ffda; /* Teal accent */
+    --button-bg: #6e40c9; /* Purple tint for buttons */
+    --button-hover-bg: #0b57d080; /* Darker purple on hover */
+    --tag-bg: #0b57d01f; /* Semi-transparent tag background */
+    --tag-shadow: 0 0 0px 1.25px #0b57d080; /* Glow effect for tags */
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Card shadow */
+  }
+
+  body {
+    overflow: hidden;
+    width: 30rem;
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .sidebar {
+    padding-top: 10%;
+    width: 250px;
+    height: 95%;
+    background-color: var(--background-color);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+  }
+
+  .sidebar.collapsed {
+    width: 80px;
+  }
+
+  .sidebar-header {
+    padding: 1.13rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--accent-color);
+  }
+
+  .nav-icon {
+    font-size: 1.25rem;
+    margin-right: 1rem;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+  }
+
+  .sidebar.collapsed .nav-text {
+    display: none;
+  }
+
+  .sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sidebar-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .sidebar-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="sidebar.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#home" class="nav-link">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+        </a>
+        <a href="#projects" class="nav-link">
+          <span class="nav-icon">📂</span>
+          <span class="nav-text">Projects</span>
+        </a>
+        <a href="#about" class="nav-link">
+          <span class="nav-icon">👤</span>
+          <span class="nav-text">About</span>
+        </a>
+        <a href="#contact" class="nav-link">
+          <span class="nav-icon">📧</span>
+          <span class="nav-text">Contact</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="sidebar-button">Settings</button>
+        <button class="sidebar-button">Logout</button>
+      </div>
+    </aside>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        // sidebar.classList.toggle("collapsed");
+      }
+    </script>
+  </body>
+</html>
