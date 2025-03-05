@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "translation_practice_project",
+    "title": "RepeteFloent",
+    "description": "A web application designed to help users practice translation skills. It includes features like text translation, hints, progress tracking, and a timer.",
+    "date": "1/20/2023",
+    "image": "images/translation_practice_project.png",
+    "tags": ["JavaScript", "HTML", "CSS"],
+    "category": ["Web Development"],
+    "hidden_tags": ["Translation", "Language", "Web Development", "JavaScript", "HTML", "CSS"],
+    "url": "https://black-steve0.github.io/RepeteFloent/",
+    "source": "https://github.com/black-steve0/RepeteFloent"
+  },
+  {
+    "_id": "stellar_showdown",
+    "title": "Stellar Showdown",
+    "description": "A space-themed singleplayer about shooting down asteroids. This game was made for the Raylib Asteriod themed GameJam.",
+    "date": "10/15/2023",
+    "image": "images/stellar_showdown.png",
+    "tags": ["C++", "C", "Raylib"],
+    "category": ["Games"],
+    "hidden_tags": ["C++", "Raylib", "Game", "C"],
+    "url": "https://github.com/black-steve0/Stellar-Showdown",
+    "source": "https://github.com/black-steve0/Stellar-Showdown"
+  },
+  {
+    "_id": "ticket_system",
+    "title": "Report Tracking System",
+    "description": "A system designed to track, manage, and display reports for technicians. It allows technicians to view reports in a workspace, with features like real-time updates, priority tagging, and status tracking.",
+    "date": "10/15/2023",
+    "image": "images/ticket_system.png",
+    "tags": ["Python", "Flask", "SQLite", "HTML"],
+    "category": ["Web Development"],
+    "hidden_tags": ["Python", "Flask", "JavaScript", "HTML", "CSS", "SQLite"],
+    "url": "https://github.com/black-steve0/Report-Tracking-System",
+    "source": "https://github.com/black-steve0/Report-Tracking-System"
+  },
+  {
+    "_id": "password_manager",
+    "title": "Password Manager",
+    "description": "A project made to participate in the bahrain hackathon. The application allows the user to safely store their passwords locally and back them up.",
+    "date": "2/19/2025",
+    "image": "images/password_manager.png",
+    "tags": ["Python", "Eel", "HTML"],
+    "category": ["Web Development"],
+    "hidden_tags": ["Python", "Eel", "JavaScript", "HTML", "CSS"],
+    "url": "https://github.com/black-steve0/password-manager",
+    "source": "https://github.com/black-steve0/password-manager"
+  }
+]

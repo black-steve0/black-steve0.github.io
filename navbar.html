@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <style>
+      :root {
+        --background-color: #0a192f; /* Dark blue background */
+        --text-color: #ccd6f6; /* Light gray text */
+        --accent-color: #64ffda; /* Teal accent */
+        --button-bg: #6e40c9; /* Purple tint for buttons */
+        --button-hover-bg: #0b57d080; /* Darker purple on hover */
+        --tag-bg: #0b57d01f; /* Semi-transparent tag background */
+        --tag-shadow: 0 0 0px 1.25px #0b57d080; /* Glow effect for tags */
+        --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Card shadow */
+      }
+
+      .navbar-footer {
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      body {
+        overflow: hidden;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: var(--text-color);
+        max-height: fit-content;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(3, 7, 18, 0.97));
+        z-index: 1000;
+      }
+
+      .navbar-brand .brand-logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+
+      .navbar-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-link {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.3rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-color);
+      }
+
+      .navbar-actions {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-button {
+        background-color: var(--button-bg);
+        color: var(--text-color);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav-button:hover {
+        background-color: var(--button-hover-bg);
+      }
+
+      .navbar-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .toggle-icon {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color);
+        margin: 4px 0;
+        transition: transform 0.3s ease;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .navbar-links {
+          display: none;
+          flex-direction: column;
+          top: 60px;
+          right: 0;
+          background-color: var(--background-color);
+          width: 100%;
+          padding: 1rem;
+          box-shadow: var(--card-shadow);
+        }
+
+        .navbar-links.active {
+          display: flex;
+        }
+
+        .navbar-actions {
+          display: none;
+        }
+
+        .navbar-toggle {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="#" class="brand-logo">MyPortfolio</a>
+      </div>
+      <div class="navbar-links">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="navbar-actions"></div>
+      <div class="navbar-toggle" onclick="toggleNav()">
+        <span class="toggle-icon"></span>
+      </div>
+    </nav>
+    <div class="navbar-footer" style="position:fixed;"></div>
+
+    <script>
+      function toggleNav() {
+        const navbarLinks = document.querySelector(".navbar-links");
+        navbarLinks.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
