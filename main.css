@@ -112,7 +112,6 @@
   #row-container {
     width: 90%; /* Adjusted for smaller screens */
     margin: 0 0; /* Center the container */
-    margin-left: 16vw;
     padding: var(--space-lg);
     max-width: 1400px;
     animation: fadeInUp 0.8s var(--transition-bounce) both;
