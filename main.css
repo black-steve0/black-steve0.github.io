@@ -9,7 +9,7 @@
     width: 100%;
     height: 100%;
     margin: 0;
-    scroll-behavior: smooth;
+    overflow: hidden;
   }
   
   body {
@@ -47,15 +47,15 @@
   }
   
   #page {
-    position: absolute;
+    margin-top: 6.3vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow: hidden;
+    overflow:auto;
     width: 100%;
     height: 100%;
   }
-
+  
   :root {
     /* Modern color palette with enhanced depth */
     --background-color: #030712;
@@ -75,27 +75,27 @@
     --card-shadow: 0 20px 50px -15px rgba(2, 6, 23, 0.7), 0 10px 20px -5px rgba(2, 6, 23, 0.5);
     --card-hover-shadow: 0 25px 60px -10px rgba(2, 6, 23, 0.8), 0 15px 30px -5px rgba(2, 6, 23, 0.6);
     --card-border: 1px solid rgba(99, 102, 241, 0.1);
-    
+  
     /* Typography */
     --font-primary: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
-    --font-size-xs: clamp(0.7rem, 0.8vw, 0.8rem);
-    --font-size-small: clamp(0.8rem, 1vw, 0.9rem);
-    --font-size-base: clamp(1rem, 1.1vw, 1.1rem);
-    --font-size-large: clamp(1.2rem, 1.5vw, 1.4rem);
-    --font-size-xl: clamp(1.6rem, 2.2vw, 2.2rem);
-    --font-size-2xl: clamp(2.2rem, 3vw, 2.8rem);
+    --font-size-xs: clamp(0.7rem, 2vw, 0.8rem); /* Responsive font size */
+    --font-size-small: clamp(0.8rem, 2.5vw, 0.9rem);
+    --font-size-base: clamp(1rem, 3vw, 1.1rem);
+    --font-size-large: clamp(1.2rem, 4vw, 1.4rem);
+    --font-size-xl: clamp(1.6rem, 5vw, 2.2rem);
+    --font-size-2xl: clamp(2.2rem, 6vw, 2.8rem);
     --line-height-tight: 1.2;
     --line-height-normal: 1.6;
     --line-height-relaxed: 1.8;
   
     /* Spacing */
-    --space-xxs: clamp(0.25rem, 0.4vw, 0.5rem);
-    --space-xs: clamp(0.5rem, 0.7vw, 0.75rem);
-    --space-sm: clamp(0.75rem, 1vw, 1rem);
-    --space-md: clamp(1.25rem, 1.8vw, 1.5rem);
-    --space-lg: clamp(2rem, 2.5vw, 3rem);
-    --space-xl: clamp(3rem, 4vw, 4rem);
-    
+    --space-xxs: clamp(0.25rem, 1vw, 0.5rem); /* Responsive spacing */
+    --space-xs: clamp(0.5rem, 1.5vw, 0.75rem);
+    --space-sm: clamp(0.75rem, 2vw, 1rem);
+    --space-md: clamp(1.25rem, 3vw, 1.5rem);
+    --space-lg: clamp(2rem, 4vw, 3rem);
+    --space-xl: clamp(3rem, 5vw, 4rem);
+  
     /* Animation */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -111,8 +111,9 @@
   }
   
   #row-container {
-    width: 75%;
-    margin-left: 25%;
+    width: 90%; /* Adjusted for smaller screens */
+    margin: 0 0; /* Center the container */
+    margin-left: 16vw;
     padding: var(--space-lg);
     max-width: 1400px;
     animation: fadeInUp 0.8s var(--transition-bounce) both;
@@ -123,11 +124,6 @@
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-  
-  @keyframes floatIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
   }
   
   .row-header {
@@ -195,8 +191,8 @@
   }
   
   .card {
-    flex: 0 0 380px;
-    min-height: 360px;
+    flex: 0 0 clamp(300px, 30vw, 380px); /* Responsive card width */
+    min-height: clamp(300px, 40vh, 360px); /* Responsive card height */
     background: var(--card-bg);
     border-radius: 20px;
     box-shadow: var(--card-shadow);
@@ -209,9 +205,9 @@
     display: flex;
     flex-direction: column;
   }
-
+  
   .card:hover {
-    transform: scale(1.25);
+    transform: scale(1.05); /* Reduced scale for better responsiveness */
   }
   
   @keyframes cardAppear {
@@ -324,12 +320,6 @@
     color: rgba(248, 250, 252, 0.8);
   }
   
-  .card:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: var(--card-hover-shadow);
-    background: var(--card-bg-hover);
-  }
-  
   .card-tags {
     display: flex;
     gap: var(--space-xs);
@@ -400,6 +390,7 @@
     overflow: hidden;
     z-index: 1;
   }
+  
   .source-button:hover {
     content: 'source';
     padding-right: 5.5rem;
@@ -436,3 +427,112 @@
   .row:focus-within .card {
     transform: translateX(-25%);
   }
+
+  .navbar {
+    visibility: hidden;
+    width: 100%;
+    height: 61px;
+    border: none;
+    z-index: 99;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar {
+    width: 16vw; height: 100%; border: none; z-index: 98
+  }
+
+@media (max-width: 768px) {
+  /* Adjust the row container for smaller screens */
+  #row-container {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 4vh;
+    padding: var(--space-md);
+  }
+
+  /* Adjust the row header for smaller screens */
+  .row-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+  }
+
+  .row-header::after {
+    width: 80px;
+  }
+
+  /* Adjust the row title for smaller screens */
+  .row-title {
+    font-size: var(--font-size-xl);
+  }
+
+  /* Adjust the row and card layout for smaller screens */
+  .row {
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+
+  .card {
+    flex: 0 0 100%;
+    min-height: auto;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Adjust card hover effects for smaller screens */
+  .card:hover {
+    transform: scale(1.02);
+  }
+
+  /* Adjust card image for smaller screens */
+  .card img {
+    aspect-ratio: 16/9;
+  }
+
+  /* Adjust card content for smaller screens */
+  .card-content {
+    padding: var(--space-sm);
+  }
+
+  /* Adjust card title for smaller screens */
+  .card-title {
+    font-size: var(--font-size-large);
+  }
+
+  /* Adjust card description for smaller screens */
+  .card-description {
+    font-size: var(--font-size-small);
+  }
+
+  /* Adjust tag styles for smaller screens */
+  .tag {
+    font-size: var(--font-size-xs);
+    padding: 0.25rem 0.75rem;
+  }
+
+  /* Adjust button styles for smaller screens */
+  .source-button {
+    padding: 0.5rem 0.5rem;
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+  .source-button:hover {
+    padding-right: 4.5rem;
+  }
+
+  /* Adjust navbar and sidebar for smaller screens */
+  .navbar {
+    visibility:visible;
+  }
+
+  .sidebar {
+    visibility: hidden;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+  }
+}
