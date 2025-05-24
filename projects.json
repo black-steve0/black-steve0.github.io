@@ -46,5 +46,17 @@
     "hidden_tags": ["Python", "Eel", "JavaScript", "HTML", "CSS"],
     "url": "https://github.com/black-steve0/password-manager",
     "source": "https://github.com/black-steve0/password-manager"
+  },
+  {
+    "_id": "arkistech",
+    "title": "ARKIS Tech",
+    "description": "Made for ARKIS, this project allows students and staff to find solutions to their technical problems and scheldual meetings for repairs.",
+    "date": "4/24/2025",
+    "image": "images/arkistech.png",
+    "tags": ["Javascript", "CSS", "HTML"],
+    "category": ["Web Development"],
+    "hidden_tags": ["Javascript", "CSS", "HTML"],
+    "url": "https://arkistech.com/",
+    "source": "https://arkistech.com/"
   }
 ]

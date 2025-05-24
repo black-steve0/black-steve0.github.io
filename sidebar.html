@@ -125,6 +125,7 @@
     }
 
     .sidebar-link {
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -245,21 +246,17 @@
   <body>
     <br><br><br>
       <nav class="sidebar-nav">
-        <a href="#home" class="sidebar-link active">
+        <a onclick="window.parent.location.href = `/`;" class="sidebar-link">
           <span class="sidebar-icon"><i class="fas fa-home"></i></span>
           <span class="sidebar-text">Home</span>
         </a>
-        <a href="#projects" class="sidebar-link">
+        <a onclick="window.parent.location.href = `/projects.html`;" class="sidebar-link">
           <span class="sidebar-icon"><i class="fas fa-briefcase"></i></span>
           <span class="sidebar-text">Projects</span>
         </a>
-        <a href="#about" class="sidebar-link">
-          <span class="sidebar-icon"><i class="fas fa-user"></i></span>
-          <span class="sidebar-text">About</span>
-        </a>
-        <a href="#contact" class="sidebar-link">
-          <span class="sidebar-icon"><i class="fas fa-envelope"></i></span>
-          <span class="sidebar-text">Contact</span>
+        <a onclick="window.parent.location.href = `/skills.html`;" class="sidebar-link">
+          <span class="sidebar-icon"><i class="fas fa-code"></i></span>
+          <span class="sidebar-text">Skills</span>
         </a>
       </nav>
       <!-- <div class="sidebar-footer">

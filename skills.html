@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="main.css">
+  <style>
+    /* ===== Skills Page Specific Styles ===== */
+.skills-hero-content {
+  flex: 1;
+  padding-right: var(--space-lg);
+}
+
+.skills-icon-placeholder {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 3px solid var(--accent-color);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: var(--accent-color);
+}
+
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.skill-category-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: var(--space-md);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  transition: all var(--transition-smooth);
+}
+
+.skill-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.skill-name {
+  font-weight: 600;
+}
+
+.skill-level {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tags-cloud .tag {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all var(--transition-normal);
+}
+
+.tags-cloud .tag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+#page {
+  margin-top: 6.3vh;
+  margin-left: 16vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .skills-hero-content {
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .skills-icon-placeholder {
+    width: 200px;
+    height: 200px;
+    font-size: 4rem;
+    margin-top: var(--space-md);
+  }
+
+  
+}
+  </style>
+</head>
+<body>
+  
+  <div class="projects-container"       style="display: flex; width: 100%; overflow: hidden"
+  >
+    <iframe src="sidebar.html" class="sidebar"></iframe>
+    
+    <div id="page">
+      <!-- Skills Hero Section -->
+      <section id="skills-hero" class="portfolio-section" style="opacity: 1;">
+        <div class="skills-hero-content">
+          <h1 class="hero-title">Technical <span class="accent-text">Skills</span></h1>
+          <p class="hero-description">
+            My toolkit for building innovative solutions. Each skill is backed by real-world projects
+            and continuous learning.
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills Matrix Section -->
+      <section id="skills-matrix" class="portfolio-section" style="opacity: 1;">
+        <div class="section-header">
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="skills-categories">
+          <!-- Frontend Skills -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <i class="fas fa-code category-icon"></i>
+              <h3>Frontend Development</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5/CSS3</span>
+                  <span class="skill-level">Expert</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 100%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Github Pages</span>
+                  <span class="skill-level">knowledgeable</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 55%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Backend Skills -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <i class="fas fa-server category-icon"></i>
+              <h3>Backend Development</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">C++</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Java</span>
+                  <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-level">Intermediate</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 70%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tools & Other -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <i class="fas fa-tools category-icon"></i>
+              <h3>Tools & Other</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">GitHub</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 85%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Artificial Intelligence</span>
+                  <span class="skill-level">Advanced</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">SQL</span>
+                  <span class="skill-level">Expert</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 125%; background: var(--accent-gradient);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skill Tags Cloud -->
+      <section id="skills-cloud" class="portfolio-section" style="opacity: 1;">
+        <div class="section-header">
+          <h2 class="section-title">Technologies I Work With</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="tags-cloud">
+          <span class="tag">Firebase</span>
+          <span class="tag">Github</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">AI</span>
+          <span class="tag">Visual Studio</span>
+          <span class="tag">Cursor</span>
+        </div>
+      </section>
+      <section id="skills-cloud" class="portfolio-section" style="opacity: 1;">
+        <div class="section-header">
+          <h2 class="section-title">Languages I Work With</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="tags-cloud">
+          <span class="tag">C++</span>
+          <span class="tag">C#</span>
+          <span class="tag">C</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Json</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">Assembly</span>
+          <span class="tag">Lua</span>
+          <span class="tag">Visual Basic</span>
+          <span class="tag">Typescript</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Firebase</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

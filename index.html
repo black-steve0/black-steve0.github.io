@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Projects</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  </head>
-  <body>
-      <div
-        id="page"
-      ></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+  
+  <div class="projects-container" style="display: flex; width: 100%; overflow: hidden">
+    <iframe src="sidebar.html" class="sidebar"></iframe>
+    
+    <div id="page">
+      <!-- Hero Section -->
+      <section id="hero" class="portfolio-section">
+        <div class="hero-content">
+          <h1 class="hero-title">Hi, I'm <span class="accent-text">Khalid</span></h1>
+          <h2 class="hero-subtitle">A Student with a passion for Software Engineering</h2>
+          <p class="hero-description">I combine creativity with technical expertise to solve complex problems and create meaningful impact.</p>
+          <div class="hero-cta">
+            <button class="cta-button" onclick="window.parent.location.href = `/projects.html`;">View My Work</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-placeholder">
+            <img src="images/profile.png" alt="">
+          </div>
+        </div>
+      </section>
+      
     </div>
-    <script src="main.js"></script>
-  </body>
+  </div>
+  
+  <!-- <script src="main.js"></script> -->
+  <script>
+    // Smooth scrolling for navigation
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+    
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.portfolio-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
 </html>
